@@ -1,0 +1,71 @@
+/* remember to add vendor prefixes such as -moz- & webkit */
+body {
+    padding-bottom: 50px;
+    background-color:#232c31;
+}
+
+
+
+.times {
+    margin-bottom: 50px;
+}
+.time-slot {
+    margin-bottom: 10px;
+}
+
+.time-slot input {
+    display: none;
+}
+
+/* style the labels */
+.time-slot label {
+    padding: 10px 20px;
+    color:#FFFFFF
+    cursor:pointer;
+    background:#EEEEEE;
+    border-radius:5px;
+    transition:0.3s ease all;
+}
+
+/* if label is checked */
+.time-slot input:checked ~ label {
+    background:lightcoral;
+    cursor:not-allowed;
+    animation:flashBooked 0.5s ease;
+}
+
+.time-slot input:not(:checked) ~ label {
+    background:#6ab074;
+    animation:flashAvailable 0.5s ease;
+}
+
+/* animation for the time slot to flash reddish */
+
+@keyframes flashBooked {
+    0%, 100% { background:#f2dede; transform:scale(1); }
+    50%      { background:#f99090; transform:scale(1.5);}
+}
+
+@-moz-keyframes flashBooked {
+    0%, 100% { background:#f2dede; transform:scale(1); }
+    50% 		{ background:#F99090; transform:scale(1.5); }
+}
+@-webkit-keyframes flashBooked {
+    0%, 100% { background:#f2dede; transform:scale(1); }
+    50% 		{ background:#F99090; transform:scale(1.5); }
+}
+
+/* animation for timeslot available flash green */
+@keyframes flashAvailable {
+    0%, 100% { background: #6ab074; transform:scale(1); }
+    50%     { background: limegreen; transform:scale(1.5); }
+}
+
+@-moz-keyframes flashAvailable {
+    0%, 100% { background:#6AB074; transform:scale(1); }
+    50% 		{ background:rgb(119, 218, 78); transform:scale(1.5); }
+}
+@-webkit-keyframes flashAvailable {
+    0%, 100% { background:#6AB074; transform:scale(1); }
+    50% 		{ background:rgb(119, 218, 78); transform:scale(1.5); }
+}
